@@ -4,13 +4,19 @@ import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
 import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 import OpacityButton from "../components/OpacityButton";
+import { LinearGradient } from "expo-linear-gradient";
 
-export default function HomeScreen({ navigation }) {
+export default function CreateAccount() {
   const [opacityPressed, setOpacityPressed] = useState(0);
 
   return (
     <View>
       <View style={styles.titleContainer}>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["rgba(0,0,0,0.8)", "transparent"]}
+          style={styles.gradientBackground}
+        />
         <Image source={InformableLogo} style={styles.informableLogo} />
         <Text style={styles.title}>informable</Text>
       </View>
@@ -18,9 +24,6 @@ export default function HomeScreen({ navigation }) {
         <OpacityButton
           buttonStyles={styles.logInButton}
           buttonText={styles.logInButtonText}
-          onPress={() => {
-            navigation.navigate("Create Account");
-          }}
         >
           Log In
         </OpacityButton>
@@ -48,7 +51,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titleContainer: {
-    backgroundColor: "#014E6F",
     width: "100%",
     padding: 16,
     maxHeight: 300,
@@ -56,6 +58,13 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  gradientBackground: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 300,
   },
   informableLogo: {
     width: 118,

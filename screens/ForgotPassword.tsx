@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Image,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 
@@ -10,6 +18,8 @@ import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 
 export default function ForgotPassword({ navigation }) {
+  const [email, setEmail] = useState("");
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -31,7 +41,13 @@ export default function ForgotPassword({ navigation }) {
       >
         Please enter the email address associated with your Informable account.
       </Text>
-      <OpacityButton buttonType="outline">email</OpacityButton>
+      <TextInput
+        style={styles.input}
+        onChangeText={setEmail}
+        value={email}
+        placeholder="email"
+        textContentType="emailAddress"
+      />
       <OpacityButton
         buttonType="fill"
         buttonStyles={{
@@ -44,6 +60,7 @@ export default function ForgotPassword({ navigation }) {
         buttonType="custom"
         buttonStyles={styles.dontHaveAnAccount}
         buttonText={styles.dontHaveAnAccountText}
+        onPress={() => navigation.navigate("Create Account")}
       >
         Don't have an account?
       </OpacityButton>
@@ -75,6 +92,17 @@ const styles = StyleSheet.create({
     color: "white",
     position: "absolute",
     top: 48,
+  },
+  input: {
+    backgroundColor: "white",
+    width: "100%",
+    maxWidth: 308,
+    padding: 8,
+    borderWidth: 1,
+    borderColor: "#004F71",
+    borderStyle: "solid",
+    fontSize: 16,
+    textAlign: "center",
   },
   signUpGoogle: {
     backgroundColor: "#00B2A9",

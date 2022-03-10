@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Image,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 
 import OpacityButton from "../components/OpacityButton";
 
 export default function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -22,19 +33,27 @@ export default function Login({ navigation }) {
         Sign up with Google
       </OpacityButton>
       <Text style={{ color: "white", marginVertical: 8 }}>or</Text>
-      <OpacityButton buttonType="outline">email</OpacityButton>
-      <OpacityButton
-        buttonType="outline"
-        buttonStyles={{
-          marginTop: 4,
-        }}
-      >
-        password
-      </OpacityButton>
+      <TextInput
+        style={styles.input}
+        onChangeText={setEmail}
+        value={email}
+        placeholder="email"
+        textContentType="emailAddress"
+      />
+      <TextInput
+        style={[styles.input, { marginTop: 4 }]}
+        onChangeText={setPassword}
+        value={password}
+        placeholder="password"
+        textContentType="password"
+      />
       <OpacityButton
         buttonType="fill"
         buttonStyles={{
           marginTop: 16,
+        }}
+        onPress={() => {
+          navigation.navigate("Dashboard");
         }}
       >
         Log in
@@ -53,6 +72,7 @@ export default function Login({ navigation }) {
         buttonType="custom"
         buttonStyles={styles.dontHaveAnAccount}
         buttonText={styles.dontHaveAnAccountText}
+        onPress={() => navigation.navigate("Create Account")}
       >
         Don't have an account?
       </OpacityButton>
@@ -95,6 +115,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "white",
     fontSize: 16,
+  },
+  input: {
+    backgroundColor: "white",
+    width: "100%",
+    maxWidth: 308,
+    padding: 8,
+    borderWidth: 1,
+    borderColor: "#004F71",
+    borderStyle: "solid",
+    fontSize: 16,
+    textAlign: "center",
   },
   createAccountButton: {
     backgroundColor: "white",

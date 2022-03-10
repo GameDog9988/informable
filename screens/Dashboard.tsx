@@ -7,6 +7,8 @@ import {
   TextInput,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
+  SafeAreaView,
 } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { LinearGradient } from "expo-linear-gradient";
@@ -28,159 +30,156 @@ const DashboardHome = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   return (
-    <View style={styles.container}>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={["#014E6F", "#223054"]}
-        style={styles.gradientBackground}
-      />
-      <Text style={styles.title}>Select a Mode</Text>
-      <Text style={styles.subtitle}>Lorem ipsum dolor amit.</Text>
-      <TouchableOpacity
-        style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
-      >
-        <Text style={styles.modeButtonText}>Fact</Text>
-        <View
-          style={{
-            width: 32,
-            height: 32,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 20,
-            backgroundColor: colors.secondary.purple,
-            marginHorizontal: 8,
-          }}
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        <Text style={styles.title}>Select a Mode</Text>
+        <Text style={styles.subtitle}>Lorem ipsum dolor amit.</Text>
+        <TouchableOpacity
+          style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
         >
-          <Text
+          <Text style={styles.modeButtonText}>Fact</Text>
+          <View
             style={{
-              fontSize: 12,
-              color: "white",
+              width: 32,
+              height: 32,
               justifyContent: "center",
               alignItems: "center",
-              textTransform: "uppercase",
+              borderRadius: 20,
+              backgroundColor: colors.secondary.purple,
+              marginHorizontal: 8,
             }}
           >
-            Or
-          </Text>
-        </View>
-        <Text style={styles.modeButtonText}>Opinion</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[
-          styles.modeButton,
-          { backgroundColor: "#2068B7", marginTop: 8 },
-        ]}
-      >
-        <Text style={styles.modeButtonText}>Evidence</Text>
-        <View
-          style={{
-            width: 32,
-            height: 32,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 20,
-            backgroundColor: colors.secondary.purple,
-            marginHorizontal: 8,
-          }}
+            <Text
+              style={{
+                fontSize: 12,
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                textTransform: "uppercase",
+              }}
+            >
+              Or
+            </Text>
+          </View>
+          <Text style={styles.modeButtonText}>Opinion</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.modeButton,
+            { backgroundColor: "#2068B7", marginTop: 8 },
+          ]}
         >
-          <Text
+          <Text style={styles.modeButtonText}>Evidence</Text>
+          <View
             style={{
-              fontSize: 12,
-              color: "white",
+              width: 32,
+              height: 32,
               justifyContent: "center",
               alignItems: "center",
-              textTransform: "uppercase",
+              borderRadius: 20,
+              backgroundColor: colors.secondary.purple,
+              marginHorizontal: 8,
             }}
           >
-            Or
-          </Text>
-        </View>
-        <Text style={styles.modeButtonText}>Not</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[
-          styles.modeButton,
-          { backgroundColor: "#35C3E9", marginTop: 8 },
-        ]}
-      >
-        <Text style={styles.modeButtonText}>Ad</Text>
-        <View
-          style={{
-            width: 32,
-            height: 32,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 20,
-            backgroundColor: colors.secondary.purple,
-            marginHorizontal: 8,
-          }}
+            <Text
+              style={{
+                fontSize: 12,
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                textTransform: "uppercase",
+              }}
+            >
+              Or
+            </Text>
+          </View>
+          <Text style={styles.modeButtonText}>Not</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.modeButton,
+            { backgroundColor: "#35C3E9", marginTop: 8 },
+          ]}
         >
-          <Text
+          <Text style={styles.modeButtonText}>Ad</Text>
+          <View
             style={{
-              fontSize: 12,
-              color: "white",
+              width: 32,
+              height: 32,
               justifyContent: "center",
               alignItems: "center",
-              textTransform: "uppercase",
+              borderRadius: 20,
+              backgroundColor: colors.secondary.purple,
+              marginHorizontal: 8,
             }}
           >
-            Or
-          </Text>
-        </View>
-        <Text style={styles.modeButtonText}>Not</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[
-          styles.modeButton,
-          { backgroundColor: "#6932EB", marginTop: 8 },
-        ]}
-      >
-        <Text style={styles.modeButtonText}>News</Text>
-        <View
-          style={{
-            width: 32,
-            height: 32,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 20,
-            backgroundColor: colors.secondary.purple,
-            marginHorizontal: 8,
-          }}
+            <Text
+              style={{
+                fontSize: 12,
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                textTransform: "uppercase",
+              }}
+            >
+              Or
+            </Text>
+          </View>
+          <Text style={styles.modeButtonText}>Not</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.modeButton,
+            { backgroundColor: "#6932EB", marginTop: 8 },
+          ]}
         >
-          <Text
+          <Text style={styles.modeButtonText}>News</Text>
+          <View
             style={{
-              fontSize: 12,
-              color: "white",
+              width: 32,
+              height: 32,
               justifyContent: "center",
               alignItems: "center",
-              textTransform: "uppercase",
+              borderRadius: 20,
+              backgroundColor: colors.secondary.purple,
+              marginHorizontal: 8,
             }}
           >
-            Or
-          </Text>
-        </View>
-        <Text style={styles.modeButtonText}>Opinion</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={[styles.mixUpMode, { marginTop: 8 }]}>
-        <ImageBackground source={MixUp} style={styles.mixModeImage}>
-          <FontAwesome
-            name="lock"
-            size={32}
-            color="#164F66"
-            style={{ marginTop: -32, marginBottom: 4 }}
-          />
-          <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
-        </ImageBackground>
-      </TouchableOpacity>
-      <OpacityButton
-        buttonType="custom"
-        buttonStyles={styles.forgotPassword}
-        buttonText={styles.forgotPasswordText}
-      >
-        Want more Checkology?
-      </OpacityButton>
-      <StatusBar style="light" />
-    </View>
+            <Text
+              style={{
+                fontSize: 12,
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                textTransform: "uppercase",
+              }}
+            >
+              Or
+            </Text>
+          </View>
+          <Text style={styles.modeButtonText}>Opinion</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.mixUpMode, { marginTop: 8 }]}>
+          <ImageBackground source={MixUp} style={styles.mixModeImage}>
+            <FontAwesome
+              name="lock"
+              size={32}
+              color="#164F66"
+              style={{ marginTop: -32, marginBottom: 4 }}
+            />
+            <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+        <OpacityButton
+          buttonType="custom"
+          buttonStyles={styles.forgotPassword}
+          buttonText={styles.forgotPasswordText}
+        >
+          Learn more about the News Literacy Project
+        </OpacityButton>
+        <StatusBar style="light" />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -221,9 +220,14 @@ export default function Dashboard() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#292851",
+  },
+  scrollView: {
+    backgroundColor: "#292851",
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    marginHorizontal: 20,
   },
   gradientBackground: {
     position: "absolute",

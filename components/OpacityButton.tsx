@@ -35,7 +35,7 @@ export default function OpacityButton({
       style={({ pressed }) => [
         buttonType === "fill" && styles.fillButton,
         buttonType === "outline" && styles.outlineButton,
-        buttonType === "custom" && buttonStyles,
+        buttonStyles,
         { opacity: pressed ? 0.5 : 1 },
         { justifyContent: "center" },
         { alignItems: "center" },
@@ -47,7 +47,7 @@ export default function OpacityButton({
         style={[
           buttonType === "fill" && styles.fillButtonText,
           buttonType === "outline" && styles.outlineButtonText,
-          buttonType === "custom" && buttonText,
+          buttonText,
           { marginLeft: icon && 16 },
         ]}
       >
@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#004F71",
     borderStyle: "solid",
-    marginTop: 16,
     fontSize: 16,
   },
   outlineButtonText: {

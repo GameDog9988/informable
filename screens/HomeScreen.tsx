@@ -25,12 +25,20 @@ export default function HomeScreen({ navigation }) {
         <OpacityButton
           buttonType="fill"
           onPress={() => {
-            navigation.navigate("Create Account");
+            navigation.navigate("Login");
           }}
         >
           Log In
         </OpacityButton>
-        <OpacityButton buttonType="outline">Create an Account</OpacityButton>
+        <OpacityButton
+          buttonType="outline"
+          onPress={() => {
+            navigation.navigate("Create Account");
+          }}
+          buttonStyles={{ marginTop: 16 }}
+        >
+          Create an Account
+        </OpacityButton>
         <OpacityButton
           buttonType="custom"
           buttonText={styles.playAsGuestButtonText}

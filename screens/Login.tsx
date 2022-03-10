@@ -9,7 +9,7 @@ import OpacityButton from "../components/OpacityButton";
 import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 
-export default function CreateAccount({ navigation }) {
+export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -17,7 +17,7 @@ export default function CreateAccount({ navigation }) {
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
-      <Text style={styles.title}>Create an Account</Text>
+      <Text style={styles.title}>Login</Text>
       <OpacityButton
         buttonType="outline"
         icon={<FontAwesome name="google" size={24} color="#00B2A9" />}
@@ -25,27 +25,39 @@ export default function CreateAccount({ navigation }) {
         Sign up with Google
       </OpacityButton>
       <Text style={{ color: "white", marginVertical: 8 }}>or</Text>
-      <OpacityButton buttonType="fill">Sign up with Email</OpacityButton>
-      <Text
-        style={{
-          color: "white",
-          marginVertical: 8,
-          width: "100%",
-          maxWidth: 200,
-          textAlign: "center",
-          fontSize: 10,
+      <OpacityButton buttonType="outline">email</OpacityButton>
+      <OpacityButton
+        buttonType="outline"
+        buttonStyles={{
+          marginTop: 4,
+        }}
+      >
+        password
+      </OpacityButton>
+      <OpacityButton
+        buttonType="fill"
+        buttonStyles={{
           marginTop: 16,
         }}
       >
-        By creating an account you agree to our Terms of Service and Privacy
-        Policy.
-      </Text>
+        Log in
+      </OpacityButton>
       <OpacityButton
         buttonType="custom"
-        buttonStyles={styles.alreadyHaveAnAccount}
-        buttonText={styles.alreadyHaveAnAccountText}
+        buttonStyles={styles.forgotPassword}
+        buttonText={styles.forgotPasswordText}
+        onPress={() => {
+          navigation.navigate("Forgot Password");
+        }}
       >
-        Already have an account?
+        Forgot password?
+      </OpacityButton>
+      <OpacityButton
+        buttonType="custom"
+        buttonStyles={styles.dontHaveAnAccount}
+        buttonText={styles.dontHaveAnAccountText}
+      >
+        Don't have an account?
       </OpacityButton>
       <StatusBar style="auto" />
     </View>
@@ -103,11 +115,20 @@ const styles = StyleSheet.create({
     color: "#004F71",
     fontSize: 16,
   },
-  alreadyHaveAnAccount: {
+  forgotPassword: {
+    marginTop: 16,
+  },
+  forgotPasswordText: {
+    textAlign: "center",
+    color: "white",
+    textDecorationLine: "underline",
+    fontSize: 16,
+  },
+  dontHaveAnAccount: {
     position: "absolute",
     bottom: 100,
   },
-  alreadyHaveAnAccountText: {
+  dontHaveAnAccountText: {
     textAlign: "center",
     color: "white",
     textDecorationLine: "underline",

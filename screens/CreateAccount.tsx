@@ -2,6 +2,7 @@ import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome } from "@expo/vector-icons";
 
 import OpacityButton from "../components/OpacityButton";
 
@@ -9,38 +10,44 @@ import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 
 export default function CreateAccount() {
-  const [opacityPressed, setOpacityPressed] = useState(0);
-
   return (
-    <View>
-      <View style={styles.titleContainer}>
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#014E6F", "#223054"]}
-          style={styles.gradientBackground}
-        />
-        <Image source={InformableLogo} style={styles.informableLogo} />
-        <Text style={styles.title}>informable</Text>
-      </View>
-      <View style={styles.container}>
-        <OpacityButton
-          buttonStyles={styles.logInButton}
-          buttonText={styles.logInButtonText}
-        >
-          Log In
-        </OpacityButton>
-        <OpacityButton
-          buttonStyles={styles.createAccountButton}
-          buttonText={styles.createAccountButtonText}
-        >
-          Create an Account
-        </OpacityButton>
-        <OpacityButton buttonText={styles.playAsGuestButtonText}>
-          Play as a Guest
-        </OpacityButton>
-        <Image source={NLPLogo} style={styles.newsLitImage} />
-        <StatusBar style="auto" />
-      </View>
+    <View style={styles.container}>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#014E6F", "#223054"]}
+        style={styles.gradientBackground}
+      />
+      <Text style={styles.title}>Create an Account</Text>
+      <OpacityButton
+        buttonType="outline"
+        icon={<FontAwesome name="google" size={24} color="#00B2A9" />}
+      >
+        Sign up with Google
+      </OpacityButton>
+      <Text style={{ color: "white", marginVertical: 8 }}>or</Text>
+      <OpacityButton buttonType="fill">Sign up with Email</OpacityButton>
+      <Text
+        style={{
+          color: "white",
+          marginVertical: 8,
+          width: "100%",
+          maxWidth: 200,
+          textAlign: "center",
+          fontSize: 10,
+          marginTop: 16,
+        }}
+      >
+        By creating an account you agree to our Terms of Service and Privacy
+        Policy.
+      </Text>
+      <OpacityButton
+        buttonType="custom"
+        buttonStyles={styles.alreadyHaveAnAccount}
+        buttonText={styles.alreadyHaveAnAccountText}
+      >
+        Already have an account?
+      </OpacityButton>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -52,33 +59,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  titleContainer: {
-    backgroundColor: "#014E6F",
-    width: "100%",
-    padding: 16,
-    maxHeight: 300,
-    height: "100%",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   gradientBackground: {
     position: "absolute",
     left: 0,
     right: 0,
     top: 0,
-    height: 300,
+    height: "100%",
   },
   informableLogo: {
     width: 118,
   },
   title: {
     fontSize: 32,
-    fontWeight: "bold",
     textAlign: "center",
     color: "white",
+    position: "absolute",
+    top: 48,
   },
-  logInButton: {
+  signUpGoogle: {
     backgroundColor: "#00B2A9",
     width: "100%",
     maxWidth: 308,
@@ -105,12 +103,15 @@ const styles = StyleSheet.create({
     color: "#004F71",
     fontSize: 16,
   },
-  playAsGuestButtonText: {
+  alreadyHaveAnAccount: {
+    position: "absolute",
+    bottom: 100,
+  },
+  alreadyHaveAnAccountText: {
     textAlign: "center",
-    color: "#004F71",
+    color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
-    marginTop: 32,
   },
   newsLitImage: {
     width: 97,

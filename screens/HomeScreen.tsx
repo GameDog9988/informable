@@ -23,21 +23,18 @@ export default function HomeScreen({ navigation }) {
       </View>
       <View style={styles.container}>
         <OpacityButton
-          buttonStyles={styles.logInButton}
-          buttonText={styles.logInButtonText}
+          buttonType="fill"
           onPress={() => {
             navigation.navigate("Create Account");
           }}
         >
           Log In
         </OpacityButton>
+        <OpacityButton buttonType="outline">Create an Account</OpacityButton>
         <OpacityButton
-          buttonStyles={styles.createAccountButton}
-          buttonText={styles.createAccountButtonText}
+          buttonType="custom"
+          buttonText={styles.playAsGuestButtonText}
         >
-          Create an Account
-        </OpacityButton>
-        <OpacityButton buttonText={styles.playAsGuestButtonText}>
           Play as a Guest
         </OpacityButton>
         <Image source={NLPLogo} style={styles.newsLitImage} />

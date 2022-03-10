@@ -167,6 +167,19 @@ const DashboardHome = ({ navigation }) => {
               style={{ marginTop: -32, marginBottom: 4 }}
             />
             <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
+            <Text
+              style={{
+                position: "absolute",
+                bottom: 8,
+                color: "white",
+                fontSize: 12,
+                backgroundColor: "rgba(0, 0, 0, 0.25)",
+                padding: 4,
+                borderRadius: 4,
+              }}
+            >
+              Complete the 4 challenges above to unlock
+            </Text>
           </ImageBackground>
         </TouchableOpacity>
         <OpacityButton

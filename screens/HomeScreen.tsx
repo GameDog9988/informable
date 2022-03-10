@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: 308,
     padding: 8,
+    borderRadius: 4,
   },
   logInButtonText: {
     textAlign: "center",
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     marginTop: 16,
     fontSize: 16,
+    borderRadius: 4,
   },
   createAccountButtonText: {
     textAlign: "center",

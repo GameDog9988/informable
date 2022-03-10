@@ -6,9 +6,6 @@ import { FontAwesome } from "@expo/vector-icons";
 
 import OpacityButton from "../components/OpacityButton";
 
-import InformableLogo from "../assets/Informable_Logo.png";
-import NLPLogo from "../assets/NLP_Logo.png";
-
 export default function Login({ navigation }) {
   return (
     <View style={styles.container}>

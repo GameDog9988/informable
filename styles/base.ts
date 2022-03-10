@@ -12,7 +12,7 @@ export const colors  = {
    teal: "#00B2A9",
   },
   secondary: {
-   teal: "#3C1D53",
+   teal: "#2CD5C4",
    seaBlue: "#007681",
    slateBlue: "#004F71",
    purple: "#403A60",

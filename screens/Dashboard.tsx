@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { LinearGradient } from "expo-linear-gradient";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -29,55 +35,146 @@ const DashboardHome = ({ navigation }) => {
       />
       <Text style={styles.title}>Select a Mode</Text>
       <Text style={styles.subtitle}>Lorem ipsum dolor amit.</Text>
-      <OpacityButton
-        buttonType="outline"
-        icon={<FontAwesome name="google" size={24} color="#00B2A9" />}
+      <TouchableOpacity
+        style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
       >
-        Sign up with Google
-      </OpacityButton>
-      <Text style={{ color: "white", marginVertical: 8 }}>or</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={setEmail}
-        value={email}
-        placeholder="email"
-        textContentType="emailAddress"
-      />
-      <TextInput
-        style={[styles.input, { marginTop: 4 }]}
-        onChangeText={setPassword}
-        value={password}
-        placeholder="password"
-        textContentType="password"
-      />
-      <OpacityButton
-        buttonType="fill"
-        buttonStyles={{
-          marginTop: 16,
-        }}
-        onPress={() => {
-          navigation.navigate("Dashboard");
-        }}
+        <Text style={styles.modeButtonText}>Fact</Text>
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+            backgroundColor: colors.secondary.purple,
+            marginHorizontal: 8,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              color: "white",
+              justifyContent: "center",
+              alignItems: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            Or
+          </Text>
+        </View>
+        <Text style={styles.modeButtonText}>Opinion</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[
+          styles.modeButton,
+          { backgroundColor: "#2068B7", marginTop: 8 },
+        ]}
       >
-        Log in
-      </OpacityButton>
+        <Text style={styles.modeButtonText}>Evidence</Text>
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+            backgroundColor: colors.secondary.purple,
+            marginHorizontal: 8,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              color: "white",
+              justifyContent: "center",
+              alignItems: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            Or
+          </Text>
+        </View>
+        <Text style={styles.modeButtonText}>Not</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[
+          styles.modeButton,
+          { backgroundColor: "#35C3E9", marginTop: 8 },
+        ]}
+      >
+        <Text style={styles.modeButtonText}>Ad</Text>
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+            backgroundColor: colors.secondary.purple,
+            marginHorizontal: 8,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              color: "white",
+              justifyContent: "center",
+              alignItems: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            Or
+          </Text>
+        </View>
+        <Text style={styles.modeButtonText}>Not</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[
+          styles.modeButton,
+          { backgroundColor: "#6932EB", marginTop: 8 },
+        ]}
+      >
+        <Text style={styles.modeButtonText}>News</Text>
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+            backgroundColor: colors.secondary.purple,
+            marginHorizontal: 8,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              color: "white",
+              justifyContent: "center",
+              alignItems: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            Or
+          </Text>
+        </View>
+        <Text style={styles.modeButtonText}>Opinion</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.mixUpMode, { marginTop: 8 }]}>
+        <FontAwesome
+          name="lock"
+          size={32}
+          color="#164F66"
+          style={{ marginTop: -32, marginBottom: 4 }}
+        />
+        <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
+      </TouchableOpacity>
       <OpacityButton
         buttonType="custom"
         buttonStyles={styles.forgotPassword}
         buttonText={styles.forgotPasswordText}
-        onPress={() => {
-          navigation.navigate("Forgot Password");
-        }}
       >
-        Forgot password?
-      </OpacityButton>
-      <OpacityButton
-        buttonType="custom"
-        buttonStyles={styles.dontHaveAnAccount}
-        buttonText={styles.dontHaveAnAccountText}
-        onPress={() => navigation.navigate("Create Account")}
-      >
-        Don't have an account?
+        Want more Checkology?
       </OpacityButton>
       <StatusBar style="light" />
     </View>
@@ -144,11 +241,39 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     color: "white",
+    marginBottom: 32,
   },
-  logInButtonText: {
-    textAlign: "center",
+  modeButton: {
+    backgroundColor: colors.tertiary,
+    width: "100%",
+    maxWidth: 308,
+    borderRadius: 8,
+    padding: 8,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  modeButtonText: {
+    fontSize: 20,
     color: "white",
-    fontSize: 16,
+    textTransform: "uppercase",
+    textAlign: "center",
+  },
+  mixUpMode: {
+    backgroundColor: colors.primary.teal,
+    width: "100%",
+    maxWidth: 308,
+    height: 220,
+    borderRadius: 8,
+    padding: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  mixUpModeText: {
+    fontSize: 28,
+    color: "white",
+    textTransform: "uppercase",
+    textAlign: "center",
   },
   input: {
     backgroundColor: "white",

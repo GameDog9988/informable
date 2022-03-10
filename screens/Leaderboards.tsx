@@ -64,7 +64,7 @@ export default function Leaderboards({ navigation }) {
       >
         Don't have an account?
       </OpacityButton>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }

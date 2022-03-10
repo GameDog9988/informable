@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     color: "white",
     position: "absolute",
     top: 48,
+    fontWeight: "bold",
   },
   signUpGoogle: {
     backgroundColor: "#00B2A9",

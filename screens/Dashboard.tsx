@@ -25,7 +25,7 @@ import MixUp from "../assets/Mix_Up.png";
 
 const Tab = createBottomTabNavigator();
 
-const DashboardHome = ({ navigation }) => {
+const DashboardHome = ({ navigation, route }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -67,6 +67,9 @@ const DashboardHome = ({ navigation }) => {
             styles.modeButton,
             { backgroundColor: "#2068B7", marginTop: 8 },
           ]}
+          onPress={() => {
+            route.params.rootNavigation.navigate("Lesson");
+          }}
         >
           <Text style={styles.modeButtonText}>Evidence</Text>
           <View
@@ -195,7 +198,7 @@ const DashboardHome = ({ navigation }) => {
   );
 };
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -218,13 +221,24 @@ export default function Dashboard() {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Leaderboards" component={Leaderboards} />
+      <Tab.Screen
+        name="Leaderboards"
+        component={Leaderboards}
+        options={{ headerShown: false }}
+        initialParams={{ rootNavigation: navigation }}
+      />
       <Tab.Screen
         name="Home"
         component={DashboardHome}
         options={{ headerShown: false }}
+        initialParams={{ rootNavigation: navigation }}
       />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerShown: false }}
+        initialParams={{ rootNavigation: navigation }}
+      />
     </Tab.Navigator>
   );
 }

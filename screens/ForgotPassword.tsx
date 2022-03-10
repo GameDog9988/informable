@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     color: "white",
     position: "absolute",
     top: 48,
+    fontWeight: "bold",
   },
   input: {
     backgroundColor: "white",

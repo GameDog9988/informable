@@ -5,6 +5,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CreateAccount from "./screens/CreateAccount";
 import Login from "./screens/Login";
 import Dashboard from "./screens/Dashboard";
+import Lesson from "./screens/Lesson";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -51,6 +52,11 @@ export default function App() {
         <Stack.Screen
           name="Dashboard"
           component={Dashboard}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Lesson"
+          component={Lesson}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

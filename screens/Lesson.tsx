@@ -10,7 +10,7 @@ import OpacityButton from "../components/OpacityButton";
 import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 
-export default function HomeScreen({ navigation }) {
+export default function Lesson({ navigation }) {
   return (
     <View>
       <View style={styles.titleContainer}>
@@ -20,7 +20,7 @@ export default function HomeScreen({ navigation }) {
           style={styles.gradientBackground}
         />
         <Image source={InformableLogo} style={styles.informableLogo} />
-        <Text style={styles.title}>informable</Text>
+        <Text style={styles.title}>Lesson</Text>
       </View>
       <View style={styles.container}>
         <OpacityButton
@@ -44,9 +44,7 @@ export default function HomeScreen({ navigation }) {
           buttonType="custom"
           buttonText={styles.playAsGuestButtonText}
           onPress={() => {
-            navigation.navigate("Dashboard", {
-              rootNavigation: navigation,
-            });
+            navigation.navigate("Dashboard");
           }}
         >
           Play as a Guest

@@ -64,7 +64,7 @@ export default function Settings({ navigation }) {
       >
         Don't have an account?
       </OpacityButton>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }

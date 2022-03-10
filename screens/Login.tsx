@@ -46,7 +46,9 @@ export default function Login({ navigation }) {
           marginTop: 16,
         }}
         onPress={() => {
-          navigation.navigate("Dashboard");
+          navigation.navigate("Dashboard", {
+            rootNavigation: navigation,
+          });
         }}
       >
         Log in
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
     color: "white",
     position: "absolute",
     top: 48,
+    fontWeight: "bold",
   },
   logInButtonText: {
     textAlign: "center",

@@ -16,7 +16,7 @@ export default function OpacityButton({
   buttonText,
   children,
 }: {
-  buttonStyles: ViewStyle;
+  buttonStyles?: ViewStyle;
   buttonText?: TextStyle;
   children: JSX.Element | string;
 }) {

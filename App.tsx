@@ -27,10 +27,7 @@ export default function App() {
         >
           Create an Account
         </OpacityButton>
-        <OpacityButton
-          buttonStyles={styles.playAsGuestButton}
-          buttonText={styles.playAsGuestButtonText}
-        >
+        <OpacityButton buttonText={styles.playAsGuestButtonText}>
           Plau as a Guest
         </OpacityButton>
         <Image source={NLPLogo} style={styles.newsLitImage} />
@@ -92,10 +89,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#004F71",
     fontSize: 16,
-  },
-  playAsGuestButton: {
-    textAlign: "center",
-    color: "#004F71",
   },
   playAsGuestButtonText: {
     textAlign: "center",

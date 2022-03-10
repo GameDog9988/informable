@@ -6,6 +6,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { LinearGradient } from "expo-linear-gradient";
@@ -13,12 +14,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome } from "@expo/vector-icons";
 import Leaderboards from "./Leaderboards";
 import Settings from "./Settings";
-
+import { colors } from "../styles/base";
 import OpacityButton from "../components/OpacityButton";
 
 import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
-import { colors } from "../styles/base";
+import MixUp from "../assets/Mix_Up.png";
 
 const Tab = createBottomTabNavigator();
 
@@ -161,13 +162,15 @@ const DashboardHome = ({ navigation }) => {
         <Text style={styles.modeButtonText}>Opinion</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.mixUpMode, { marginTop: 8 }]}>
-        <FontAwesome
-          name="lock"
-          size={32}
-          color="#164F66"
-          style={{ marginTop: -32, marginBottom: 4 }}
-        />
-        <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
+        <ImageBackground source={MixUp} style={styles.mixModeImage}>
+          <FontAwesome
+            name="lock"
+            size={32}
+            color="#164F66"
+            style={{ marginTop: -32, marginBottom: 4 }}
+          />
+          <Text style={styles.mixUpModeText}>Mix-Up {"\n"} Mode</Text>
+        </ImageBackground>
       </TouchableOpacity>
       <OpacityButton
         buttonType="custom"
@@ -265,15 +268,20 @@ const styles = StyleSheet.create({
     maxWidth: 308,
     height: 220,
     borderRadius: 8,
-    padding: 8,
-    justifyContent: "center",
-    alignItems: "center",
   },
   mixUpModeText: {
     fontSize: 28,
     color: "white",
     textTransform: "uppercase",
     textAlign: "center",
+  },
+  mixModeImage: {
+    resizeMode: "cover",
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
   },
   input: {
     backgroundColor: "white",

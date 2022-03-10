@@ -177,8 +177,8 @@ const DashboardHome = ({ navigation }) => {
         >
           Learn more about the News Literacy Project
         </OpacityButton>
-        <StatusBar style="light" />
       </ScrollView>
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 };
@@ -224,10 +224,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     backgroundColor: "#292851",
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: 20,
+    paddingVertical: 24,
   },
   gradientBackground: {
     position: "absolute",
@@ -255,7 +254,7 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: 308,
     borderRadius: 8,
-    padding: 8,
+    padding: 16,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
@@ -265,6 +264,7 @@ const styles = StyleSheet.create({
     color: "white",
     textTransform: "uppercase",
     textAlign: "center",
+    fontWeight: "bold",
   },
   mixUpMode: {
     backgroundColor: colors.primary.teal,
@@ -278,6 +278,7 @@ const styles = StyleSheet.create({
     color: "white",
     textTransform: "uppercase",
     textAlign: "center",
+    fontWeight: "bold",
   },
   mixModeImage: {
     resizeMode: "cover",

@@ -44,10 +44,11 @@ export default function CreateAccount({ navigation }) {
         buttonType="custom"
         buttonStyles={styles.alreadyHaveAnAccount}
         buttonText={styles.alreadyHaveAnAccountText}
+        onPress={() => navigation.navigate("Login")}
       >
         Already have an account?
       </OpacityButton>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }

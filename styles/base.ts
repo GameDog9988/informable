@@ -7,9 +7,18 @@ export const dimensions = {
 }
   
 export const colors  = {
-  primary: "#00B2A9",
-  secondary: '#3C1D53',
-  tertiary: '#CD2060'
+  primary: {
+   purple: "#3C1053",
+   teal: "#00B2A9",
+  },
+  secondary: {
+   teal: "#3C1D53",
+   seaBlue: "#007681",
+   slateBlue: "#004F71",
+   purple: "#403A60",
+   coolGray: "#53585A"
+  },
+  tertiary: "#CD2060"
 }
 
 
@@ -18,12 +27,12 @@ export const fonts = {
   x16: 16,
   x24: 24,
   x32: 32,
-  primary: 'Cochin'
+  primary: 'Roboto'
 }
 
 export const buttons = StyleSheet.create({
   primaryButton: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primary.teal,
     width: "100%",
     maxWidth: 308,
     padding: 8,

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { colors } from "../styles/base";
 import OpacityButton from "../components/OpacityButton";
 
 import InformableLogo from "../assets/Informable_Logo.png";
@@ -42,11 +43,14 @@ export default function HomeScreen({ navigation }) {
         <OpacityButton
           buttonType="custom"
           buttonText={styles.playAsGuestButtonText}
+          onPress={() => {
+            navigation.navigate("Dashboard");
+          }}
         >
           Play as a Guest
         </OpacityButton>
         <Image source={NLPLogo} style={styles.newsLitImage} />
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
       </View>
     </View>
   );
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titleContainer: {
-    backgroundColor: "#014E6F",
+    backgroundColor: colors.secondary.seaBlue,
     width: "100%",
     padding: 16,
     maxHeight: 300,
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   logInButton: {
-    backgroundColor: "#00B2A9",
+    backgroundColor: colors.primary.teal,
     width: "100%",
     maxWidth: 308,
     padding: 8,
@@ -102,19 +106,19 @@ const styles = StyleSheet.create({
     maxWidth: 308,
     padding: 8,
     borderWidth: 1,
-    borderColor: "#004F71",
+    borderColor: colors.secondary.slateBlue,
     borderStyle: "solid",
     marginTop: 16,
     fontSize: 16,
   },
   createAccountButtonText: {
     textAlign: "center",
-    color: "#004F71",
+    color: colors.secondary.slateBlue,
     fontSize: 16,
   },
   playAsGuestButtonText: {
     textAlign: "center",
-    color: "#004F71",
+    color: colors.secondary.slateBlue,
     textDecorationLine: "underline",
     fontSize: 16,
     marginTop: 32,

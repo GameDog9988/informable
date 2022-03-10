@@ -10,7 +10,7 @@ import {
   TextInput,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { FontAwesome } from "@expo/vector-icons";
+import { colors } from "../styles/base";
 
 import OpacityButton from "../components/OpacityButton";
 
@@ -64,7 +64,7 @@ export default function ForgotPassword({ navigation }) {
       >
         Don't have an account?
       </OpacityButton>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -99,16 +99,11 @@ const styles = StyleSheet.create({
     maxWidth: 308,
     padding: 8,
     borderWidth: 1,
-    borderColor: "#004F71",
+    borderColor: colors.secondary.slateBlue,
     borderStyle: "solid",
+    color: colors.secondary.slateBlue,
     fontSize: 16,
     textAlign: "center",
-  },
-  signUpGoogle: {
-    backgroundColor: "#00B2A9",
-    width: "100%",
-    maxWidth: 308,
-    padding: 8,
   },
   logInButtonText: {
     textAlign: "center",
@@ -121,14 +116,14 @@ const styles = StyleSheet.create({
     maxWidth: 308,
     padding: 8,
     borderWidth: 1,
-    borderColor: "#004F71",
+    borderColor: colors.secondary.slateBlue,
     borderStyle: "solid",
     marginTop: 16,
     fontSize: 16,
   },
   createAccountButtonText: {
     textAlign: "center",
-    color: "#004F71",
+    color: colors.secondary.slateBlue,
     fontSize: 16,
   },
   forgotPassword: {

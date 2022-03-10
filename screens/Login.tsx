@@ -1,16 +1,9 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Image,
-  Pressable,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
+import { colors } from "../styles/base";
 
 import OpacityButton from "../components/OpacityButton";
 
@@ -76,7 +69,7 @@ export default function Login({ navigation }) {
       >
         Don't have an account?
       </OpacityButton>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -105,12 +98,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 48,
   },
-  signUpGoogle: {
-    backgroundColor: "#00B2A9",
-    width: "100%",
-    maxWidth: 308,
-    padding: 8,
-  },
   logInButtonText: {
     textAlign: "center",
     color: "white",
@@ -122,8 +109,9 @@ const styles = StyleSheet.create({
     maxWidth: 308,
     padding: 8,
     borderWidth: 1,
-    borderColor: "#004F71",
+    borderColor: colors.secondary.slateBlue,
     borderStyle: "solid",
+    color: colors.secondary.slateBlue,
     fontSize: 16,
     textAlign: "center",
   },

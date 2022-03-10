@@ -1,16 +1,23 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
-import InformableLogo from "../assets/Informable_Logo.png";
-import NLPLogo from "../assets/NLP_Logo.png";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { LinearGradient } from "expo-linear-gradient";
+
 import OpacityButton from "../components/OpacityButton";
 
-export default function HomeScreen({ navigation }) {
-  const [opacityPressed, setOpacityPressed] = useState(0);
+import InformableLogo from "../assets/Informable_Logo.png";
+import NLPLogo from "../assets/NLP_Logo.png";
 
+export default function HomeScreen({ navigation }) {
   return (
     <View>
       <View style={styles.titleContainer}>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["#014E6F", "#223054"]}
+          style={styles.gradientBackground}
+        />
         <Image source={InformableLogo} style={styles.informableLogo} />
         <Text style={styles.title}>informable</Text>
       </View>
@@ -56,6 +63,13 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  gradientBackground: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 300,
   },
   informableLogo: {
     width: 118,

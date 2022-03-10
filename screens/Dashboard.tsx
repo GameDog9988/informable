@@ -33,7 +33,6 @@ const DashboardHome = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <Text style={styles.title}>Select a Mode</Text>
-        <Text style={styles.subtitle}>Lorem ipsum dolor amit.</Text>
         <TouchableOpacity
           style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
         >
@@ -242,12 +241,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     textAlign: "center",
     color: "white",
-  },
-  subtitle: {
-    fontSize: 16,
-    textAlign: "center",
-    color: "white",
     marginBottom: 32,
+    fontWeight: "bold",
   },
   modeButton: {
     backgroundColor: colors.tertiary,

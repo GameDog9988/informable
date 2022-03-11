@@ -29,12 +29,6 @@ export default function Settings({ navigation }) {
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <FontAwesome name="chevron-left" size={24} color="gainsboro" />
-      </TouchableOpacity>
       <Text style={styles.title}>Account Settings</Text>
       <View
         style={{

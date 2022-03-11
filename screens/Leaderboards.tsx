@@ -8,64 +8,120 @@ import {
   Image,
   Pressable,
   TextInput,
+  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { colors } from "../styles/base";
+import { FontAwesome } from "@expo/vector-icons";
 
+import { colors } from "../styles/base";
 import OpacityButton from "../components/OpacityButton";
 
 import InformableLogo from "../assets/Informable_Logo.png";
 import NLPLogo from "../assets/NLP_Logo.png";
 
+const DATA = [
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+    title: "Username123",
+    rank: 1,
+  },
+  {
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+    title: "Username123",
+    rank: 2,
+  },
+  {
+    id: "58694a0f-3da1-471f-bd96-145571e29d72",
+    title: "Username123",
+    rank: 3,
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
+    title: "Username123",
+    rank: 4,
+  },
+  {
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f62",
+    title: "Username123",
+    rank: 5,
+  },
+  {
+    id: "58694a0f-3da1-471f-bd96-145571e29d71",
+    title: "Username123",
+    rank: 6,
+  },
+];
+
+const Item = ({ title, rank }) => (
+  <View style={styles.leaderboardItem}>
+    <Text style={{ flex: 0.5 }}>{rank}</Text>
+    <View style={{ flexDirection: "row", alignItems: "center", flex: 3 }}>
+      <View
+        style={{
+          width: 32,
+          height: 32,
+          borderRadius: 9999,
+          backgroundColor: colors.primary.purple,
+        }}
+      />
+      <Text style={{ marginLeft: 8 }}>{title}</Text>
+    </View>
+    <Text style={{ flex: 1 }}>10:55</Text>
+    <Text style={{ flex: 1 }}>3,100</Text>
+  </View>
+);
+
 export default function Leaderboards({ navigation }) {
   const [email, setEmail] = useState("");
 
+  const renderItem = ({ item }) => <Item title={item.title} rank={item.rank} />;
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <LinearGradient
         // Background Linear Gradient
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
-      <Text style={styles.title}>Forgot Password</Text>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <FontAwesome name="chevron-left" size={24} color="gainsboro" />
+      </TouchableOpacity>
+      <Text style={styles.title}>Leaderboard</Text>
+      <View
+        style={{
+          width: 117,
+          height: 117,
+          borderRadius: 99999,
+          backgroundColor: colors.primary.teal,
+          borderWidth: 2,
+          borderColor: "white",
+        }}
+      />
       <Text
         style={{
-          color: "white",
-          width: "100%",
-          maxWidth: 308,
+          fontSize: 20,
           textAlign: "center",
-          fontSize: 18,
-          marginTop: -32,
+          color: "white",
+          fontWeight: "bold",
           marginBottom: 32,
+          marginTop: 8,
         }}
       >
-        Please enter the email address associated with your Informable account.
+        Username123
       </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={setEmail}
-        value={email}
-        placeholder="email"
-        textContentType="emailAddress"
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        style={{ backgroundColor: "white", width: "100%" }}
       />
-      <OpacityButton
-        buttonType="fill"
-        buttonStyles={{
-          marginTop: 16,
-        }}
-      >
-        Reset password
-      </OpacityButton>
-      <OpacityButton
-        buttonType="custom"
-        buttonStyles={styles.dontHaveAnAccount}
-        buttonText={styles.dontHaveAnAccountText}
-        onPress={() => navigation.navigate("Create Account")}
-      >
-        Don't have an account?
-      </OpacityButton>
       <StatusBar style="light" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -86,12 +142,19 @@ const styles = StyleSheet.create({
   informableLogo: {
     width: 118,
   },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 16,
+    opacity: 0.75,
+  },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     textAlign: "center",
     color: "white",
-    position: "absolute",
-    top: 48,
+    fontWeight: "bold",
+    marginBottom: 32,
+    marginTop: 48,
   },
   input: {
     backgroundColor: "white",
@@ -134,6 +197,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   dontHaveAnAccount: {
     position: "absolute",
@@ -144,10 +208,19 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   newsLitImage: {
     width: 97,
     height: 82,
     marginTop: 32,
+  },
+  leaderboardItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 16,
+    borderBottomColor: "gainsboro",
+    borderBottomWidth: 1,
   },
 });

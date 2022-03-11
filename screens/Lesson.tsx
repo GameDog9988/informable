@@ -43,7 +43,7 @@ export default function Lesson({ navigation, route }) {
         </TouchableOpacity>
         <Text style={styles.title}>{route.params.mode}?</Text>
         <FontAwesome
-          name="twitter"
+          name="instagram"
           size={24}
           color="white"
           style={{ padding: 4 }}

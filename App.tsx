@@ -13,6 +13,11 @@ import {
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
 import ForgotPassword from "./screens/ForgotPassword";
+import { LogBox } from "react-native";
+
+LogBox.ignoreLogs([
+  "Non-serializable values were found in the navigation state",
+]);
 
 const Stack = createNativeStackNavigator();
 

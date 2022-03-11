@@ -32,6 +32,11 @@ const DashboardHome = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["#014E6F", "#223054"]}
+          style={styles.gradientBackground}
+        />
         <Text style={styles.title}>Select a Mode</Text>
         <TouchableOpacity
           style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
@@ -264,7 +269,7 @@ export default function Dashboard({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#292851",
+    backgroundColor: "#014E6F",
   },
   scrollView: {
     backgroundColor: "#292851",

@@ -33,12 +33,6 @@ const DashboardHome = ({ navigation, route }) => {
     <>
       <SafeAreaView style={{ backgroundColor: "#014E6F" }} />
       <SafeAreaView style={styles.container}>
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#014E6F", "#014E6F", "#223054", "#223054"]}
-          style={styles.gradientBackground}
-          locations={[0, 0.5, 0.6, 1.0]}
-        />
         <ScrollView contentContainerStyle={styles.scrollView}>
           <LinearGradient
             // Background Linear Gradient
@@ -222,8 +216,8 @@ const DashboardHome = ({ navigation, route }) => {
           >
             Learn more about the News Literacy Project
           </OpacityButton>
+          <StatusBar style="light" />
         </ScrollView>
-        <StatusBar style="light" />
       </SafeAreaView>
     </>
   );
@@ -291,7 +285,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: "100%",
+    height: "150%",
   },
   informableLogo: {
     width: 118,

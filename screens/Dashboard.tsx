@@ -236,6 +236,7 @@ export default function Dashboard({ navigation }) {
         },
         tabBarActiveTintColor: colors.primary.teal,
         tabBarInactiveTintColor: "gray",
+        tabBarShowLabel: false,
       })}
     >
       <Tab.Screen

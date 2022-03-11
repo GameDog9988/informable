@@ -35,6 +35,11 @@ const DashboardHome = ({ navigation, route }) => {
         <Text style={styles.title}>Select a Mode</Text>
         <TouchableOpacity
           style={[styles.modeButton, { backgroundColor: "#A038B1" }]}
+          onPress={() => {
+            route.params.rootNavigation.navigate("Lesson", {
+              mode: "Fact or Opinion",
+            });
+          }}
         >
           <Text style={styles.modeButtonText}>Fact</Text>
           <View
@@ -68,7 +73,9 @@ const DashboardHome = ({ navigation, route }) => {
             { backgroundColor: "#2068B7", marginTop: 8 },
           ]}
           onPress={() => {
-            route.params.rootNavigation.navigate("Lesson");
+            route.params.rootNavigation.navigate("Lesson", {
+              mode: "Evidence or Not",
+            });
           }}
         >
           <Text style={styles.modeButtonText}>Evidence</Text>
@@ -102,6 +109,11 @@ const DashboardHome = ({ navigation, route }) => {
             styles.modeButton,
             { backgroundColor: "#35C3E9", marginTop: 8 },
           ]}
+          onPress={() => {
+            route.params.rootNavigation.navigate("Lesson", {
+              mode: "Ad or Not",
+            });
+          }}
         >
           <Text style={styles.modeButtonText}>Ad</Text>
           <View
@@ -134,6 +146,11 @@ const DashboardHome = ({ navigation, route }) => {
             styles.modeButton,
             { backgroundColor: "#6932EB", marginTop: 8 },
           ]}
+          onPress={() => {
+            route.params.rootNavigation.navigate("Lesson", {
+              mode: "News or Opinion",
+            });
+          }}
         >
           <Text style={styles.modeButtonText}>News</Text>
           <View

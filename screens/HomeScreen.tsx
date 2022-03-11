@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     fontSize: 16,
     marginTop: 32,
+    fontWeight: "bold",
   },
   newsLitImage: {
     width: 97,

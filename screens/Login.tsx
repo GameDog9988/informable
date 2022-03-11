@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 import { colors } from "../styles/base";
@@ -18,6 +24,12 @@ export default function Login({ navigation }) {
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <FontAwesome name="chevron-left" size={24} color="gainsboro" />
+      </TouchableOpacity>
       <Text style={styles.title}>Login</Text>
       <OpacityButton
         buttonType="outline"
@@ -93,12 +105,18 @@ const styles = StyleSheet.create({
   informableLogo: {
     width: 118,
   },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 16,
+    opacity: 0.75,
+  },
   title: {
     fontSize: 32,
     textAlign: "center",
     color: "white",
     position: "absolute",
-    top: 48,
+    top: 64,
     fontWeight: "bold",
   },
   logInButtonText: {
@@ -142,6 +160,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   dontHaveAnAccount: {
     position: "absolute",
@@ -152,6 +171,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   newsLitImage: {
     width: 97,

@@ -8,10 +8,12 @@ import {
   Image,
   Pressable,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { colors } from "../styles/base";
+import { FontAwesome } from "@expo/vector-icons";
 
+import { colors } from "../styles/base";
 import OpacityButton from "../components/OpacityButton";
 
 import InformableLogo from "../assets/Informable_Logo.png";
@@ -27,6 +29,12 @@ export default function ForgotPassword({ navigation }) {
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <FontAwesome name="chevron-left" size={24} color="gainsboro" />
+      </TouchableOpacity>
       <Text style={styles.title}>Forgot Password</Text>
       <Text
         style={{
@@ -86,12 +94,18 @@ const styles = StyleSheet.create({
   informableLogo: {
     width: 118,
   },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 16,
+    opacity: 0.75,
+  },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     textAlign: "center",
     color: "white",
     position: "absolute",
-    top: 48,
+    top: 64,
     fontWeight: "bold",
   },
   input: {
@@ -135,6 +149,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   dontHaveAnAccount: {
     position: "absolute",
@@ -145,6 +160,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   newsLitImage: {
     width: 97,

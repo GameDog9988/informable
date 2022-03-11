@@ -108,12 +108,87 @@ export default function Leaderboards({ navigation }) {
           textAlign: "center",
           color: "white",
           fontWeight: "bold",
-          marginBottom: 32,
+          marginBottom: 16,
           marginTop: 8,
         }}
       >
         Username123
       </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          padding: 8,
+          marginBottom: 24,
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <Text
+            style={{
+              fontSize: 16,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            Rank
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            186
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text
+            style={{
+              fontSize: 16,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            Time
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            33:15
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text
+            style={{
+              fontSize: 16,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            Score
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            1,350
+          </Text>
+        </View>
+      </View>
       <FlatList
         data={DATA}
         renderItem={renderItem}

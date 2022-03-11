@@ -48,7 +48,9 @@ const DashboardHome = ({ navigation, route }) => {
               });
             }}
           >
-            <Text style={styles.modeButtonText}>Fact</Text>
+            <Text style={[styles.modeButtonText, { textAlign: "right" }]}>
+              Fact
+            </Text>
             <View
               style={{
                 width: 32,
@@ -85,7 +87,9 @@ const DashboardHome = ({ navigation, route }) => {
               });
             }}
           >
-            <Text style={styles.modeButtonText}>Evidence</Text>
+            <Text style={[styles.modeButtonText, { textAlign: "right" }]}>
+              Evidence
+            </Text>
             <View
               style={{
                 width: 32,
@@ -122,7 +126,9 @@ const DashboardHome = ({ navigation, route }) => {
               });
             }}
           >
-            <Text style={styles.modeButtonText}>Ad</Text>
+            <Text style={[styles.modeButtonText, { textAlign: "right" }]}>
+              Ad
+            </Text>
             <View
               style={{
                 width: 32,
@@ -159,7 +165,9 @@ const DashboardHome = ({ navigation, route }) => {
               });
             }}
           >
-            <Text style={styles.modeButtonText}>News</Text>
+            <Text style={[styles.modeButtonText, { textAlign: "right" }]}>
+              News
+            </Text>
             <View
               style={{
                 width: 32,
@@ -311,8 +319,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "white",
     textTransform: "uppercase",
-    textAlign: "center",
     fontWeight: "bold",
+    flex: 1,
   },
   mixUpMode: {
     backgroundColor: colors.primary.teal,

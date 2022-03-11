@@ -61,6 +61,7 @@ export default function Settings({ navigation }) {
           textAlign: "center",
           fontSize: 24,
           marginTop: 16,
+          fontWeight: "bold",
         }}
       >
         Username123
@@ -71,6 +72,7 @@ export default function Settings({ navigation }) {
           width: "100%",
           textAlign: "center",
           fontSize: 18,
+          marginTop: 4,
         }}
       >
         emailaddress@gmail.com

@@ -1,17 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Image,
-  Pressable,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, Text, View, FlatList, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 

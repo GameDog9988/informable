@@ -45,7 +45,7 @@ export default function Settings({ navigation }) {
           borderWidth: 2,
           borderColor: "white",
         }}
-      ></View>
+      />
       <OpacityButton
         buttonType="custom"
         buttonStyles={styles.forgotPassword}
@@ -75,12 +75,12 @@ export default function Settings({ navigation }) {
       >
         emailaddress@gmail.com
       </Text>
-      <View style={{ marginTop: 32 }}></View>
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
           maxWidth: 308,
+          marginTop: 32,
         }}
       >
         <Text

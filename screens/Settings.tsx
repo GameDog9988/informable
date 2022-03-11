@@ -8,10 +8,12 @@ import {
   Image,
   Pressable,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { colors } from "../styles/base";
+import { FontAwesome } from "@expo/vector-icons";
 
+import { colors } from "../styles/base";
 import OpacityButton from "../components/OpacityButton";
 
 import InformableLogo from "../assets/Informable_Logo.png";
@@ -27,39 +29,144 @@ export default function Settings({ navigation }) {
         colors={["#014E6F", "#223054"]}
         style={styles.gradientBackground}
       />
-      <Text style={styles.title}>Forgot Password</Text>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <FontAwesome name="chevron-left" size={24} color="gainsboro" />
+      </TouchableOpacity>
+      <Text style={styles.title}>Account Settings</Text>
+      <View
+        style={{
+          width: 117,
+          height: 117,
+          borderRadius: 99999,
+          backgroundColor: colors.primary.teal,
+          borderWidth: 2,
+          borderColor: "white",
+        }}
+      ></View>
+      <OpacityButton
+        buttonType="custom"
+        buttonStyles={styles.forgotPassword}
+        buttonText={styles.forgotPasswordText}
+      >
+        Select Avatar
+      </OpacityButton>
+
       <Text
         style={{
           color: "white",
           width: "100%",
-          maxWidth: 308,
           textAlign: "center",
-          fontSize: 18,
-          marginTop: -32,
-          marginBottom: 32,
+          fontSize: 24,
+          marginTop: 16,
         }}
       >
-        Please enter the email address associated with your Informable account.
+        Username123
       </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={setEmail}
-        value={email}
-        placeholder="email"
-        textContentType="emailAddress"
-      />
+      <Text
+        style={{
+          color: "white",
+          width: "100%",
+          textAlign: "center",
+          fontSize: 18,
+        }}
+      >
+        emailaddress@gmail.com
+      </Text>
+      <View style={{ marginTop: 32 }}></View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          maxWidth: 308,
+        }}
+      >
+        <Text
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            flex: 1,
+            padding: 8,
+          }}
+        >
+          Username
+        </Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={setEmail}
+          value={email}
+          placeholder="Username123"
+          textContentType="emailAddress"
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          maxWidth: 308,
+          borderTopColor: "gainsboro",
+          borderTopWidth: 1,
+        }}
+      >
+        <Text
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            flex: 1,
+            padding: 8,
+          }}
+        >
+          Email
+        </Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={setEmail}
+          value={email}
+          placeholder="emailaddress@gmail.com"
+          textContentType="emailAddress"
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          maxWidth: 308,
+          borderTopColor: "gainsboro",
+          borderTopWidth: 1,
+        }}
+      >
+        <Text
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            flex: 1,
+            padding: 8,
+          }}
+        >
+          Password
+        </Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={setEmail}
+          value={email}
+          textContentType="password"
+        />
+      </View>
+
       <OpacityButton
         buttonType="fill"
         buttonStyles={{
           marginTop: 16,
         }}
       >
-        Reset password
+        Log Out
       </OpacityButton>
       <OpacityButton
         buttonType="custom"
-        buttonStyles={styles.dontHaveAnAccount}
-        buttonText={styles.dontHaveAnAccountText}
+        buttonStyles={styles.forgotPassword}
+        buttonText={styles.forgotPasswordText}
         onPress={() => navigation.navigate("Create Account")}
       >
         Don't have an account?
@@ -86,24 +193,26 @@ const styles = StyleSheet.create({
   informableLogo: {
     width: 118,
   },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 16,
+    opacity: 0.75,
+  },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     textAlign: "center",
     color: "white",
-    position: "absolute",
-    top: 48,
+    fontWeight: "bold",
+    marginBottom: 32,
   },
   input: {
     backgroundColor: "white",
-    width: "100%",
+    flex: 3,
     maxWidth: 308,
     padding: 8,
-    borderWidth: 1,
-    borderColor: colors.secondary.slateBlue,
-    borderStyle: "solid",
     color: colors.secondary.slateBlue,
     fontSize: 16,
-    textAlign: "center",
   },
   logInButtonText: {
     textAlign: "center",
@@ -134,6 +243,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   dontHaveAnAccount: {
     position: "absolute",
@@ -144,6 +254,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     fontSize: 16,
+    fontWeight: "bold",
   },
   newsLitImage: {
     width: 97,

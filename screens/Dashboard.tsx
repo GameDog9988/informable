@@ -69,6 +69,7 @@ const DashboardHome = ({ navigation, route }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   textTransform: "uppercase",
+                  fontWeight: "bold",
                 }}
               >
                 Or
@@ -108,6 +109,7 @@ const DashboardHome = ({ navigation, route }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   textTransform: "uppercase",
+                  fontWeight: "bold",
                 }}
               >
                 Or
@@ -147,6 +149,7 @@ const DashboardHome = ({ navigation, route }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   textTransform: "uppercase",
+                  fontWeight: "bold",
                 }}
               >
                 Or
@@ -186,6 +189,7 @@ const DashboardHome = ({ navigation, route }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   textTransform: "uppercase",
+                  fontWeight: "bold",
                 }}
               >
                 Or
